@@ -6,9 +6,9 @@ A simple scheduling tool that schedules events on command!
 
 simply run the ```.new``` function with your target function as the first argument:
 
-```local Scheduler = require(script.Scheduler).new(function(arg1, arg2)
-    print("Hello world!", arg1, arg2)
-end)```
+```local Scheduler = require(script.Scheduler).new(function(arg1, arg2)```
+```    print("Hello world!", arg1, arg2)```
+```end)```
 
 to use the function, call either Every or After with at least one argument, the number of seconds to wait:
 
