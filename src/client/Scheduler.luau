@@ -7,11 +7,10 @@ function Scheduler.new(func)
 end
 
 function Scheduler:After(Seconds, Callback, ...)
+    assert(Seconds and typeof(Seconds) == "number", "Argument #1 on function 'After' requires a number.")
     local Args = {...}
     
     task.spawn(function()
-        assert(Seconds and typeof(Seconds) == "number", "Argument #1 on function 'After' requires a number.")
-
         local Start = tick()
         
         while tick() - Start < Seconds do
@@ -31,6 +30,7 @@ function Scheduler:After(Seconds, Callback, ...)
 end
 
 function Scheduler:Every(Seconds, Callback, ...)
+    assert(Seconds and typeof(Seconds) == "number", "Argument #1 on function 'Every' requires a number.")
     local Args = {...}
 
     task.spawn(function()
